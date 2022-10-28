@@ -84,7 +84,7 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # -----------------------------------------------------------------------------
 
 blog_name: stdout  # your blog must have a name for it to show up in the nav bar
-blog_description: 'a selection of the things that I write</br><small><sub><a href="https://scholar.google.com/citations?user=c4O2_N4AAAAJ" target="_blank"><code>--verbose:</code> list of all publications and patents</a></sub></small>'
+blog_description: 'a selection of the things that I write</br><small><sub><code>--verbose: </code><a href="https://scholar.google.com/citations?user=c4O2_N4AAAAJ" target="_blank">list of all publications and patents</a></sub></small>'
 permalink: /blog/:year/:title/
 
 # Pagination
