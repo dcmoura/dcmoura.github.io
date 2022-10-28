@@ -17,8 +17,7 @@ github: https://github.com/dcmoura/spyql
 
 ## How does a SPyQL query look like?
 
-```
-IMPORT pendulum AS p
+{% highlight sql %}IMPORT pendulum AS p
 SELECT
     (p.now() - p.from_timestamp(purchase_ts)).in_days() AS days_ago,
     sum_agg(price * quantity) AS total
@@ -27,8 +26,7 @@ WHERE department.upper() == 'IT' and purchase_ts is not Null
 GROUP BY 1
 ORDER BY 1
 TO json
-```
-
+{% endhighlight %}
 Simple, readable, and, as with all SPyQL programs, it's an 1-liner. In a single statement, we are:
 1. reading a CSV (of purchases) with automatic header detection, dialect detection, type inference and casting,
 2. filtering out records that do not belong to the IT department or do not have a purchase timestamp
