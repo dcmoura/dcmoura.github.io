@@ -53,7 +53,7 @@ $ pip3 install -U matplotcli
 Finally, we will download some sample data (you can alternatively copy-paste the URL to your browser and download the file from there):
 
 ```sh
-$ wget https://raw.githubusercontent.com/dcmoura/blogposts/spyql_cell_towers/spyql_cell_towers/sample.csv
+$ wget https://raw.githubusercontent.com/dcmoura/blogposts/master/spyql_cell_towers/sample.csv
 ```
 
 This CSV file contains data about cell towers that were added to the [OpenCellid](https://www.opencellid.org/) database on 2022 September 10 (`OCID-diff-cell-export-2022-09-10-T000000.csv` file from the [OpenCellid](https://www.opencellid.org/) project redistributed without modifications under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)).
