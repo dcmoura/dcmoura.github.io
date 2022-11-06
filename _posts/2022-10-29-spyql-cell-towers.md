@@ -4,6 +4,11 @@ title: Command-line data analytics made easy
 date: 2022-11-01 00:00:00
 description: With SQL Powered by Python 
 categories: data-processing command-line python csv json
+
+og_title: Command-line data analytics made easy
+description: With SQL Powered by Python 
+og_image: /assets/img/kepler_h3_cell_towers.png
+og_type: website
 ---
 
 The command-line is incredibly powerful when it comes to data processing. Still, many of us working with data do not take advantage of it. I can think of some reasons:
