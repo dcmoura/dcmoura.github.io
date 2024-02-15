@@ -2,31 +2,31 @@
 <html lang="en">
 
   <!-- Head -->
-  <head><meta http-equiv="refresh" content="3; url=https://danielcmoura.com/" />    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daniel C. Moura | Page not found</title>
+    <title>Daniel C. Moura | SPyQL</title>
     <meta name="author" content="Daniel C. Moura" />
-    <meta name="description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="description" content="SQL with Python in the Middle" />
     <meta name="keywords" content="data-science, data, spyql, data-visualization, AI, machine learning" />
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="Daniel C. Moura" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Daniel C. Moura | Page not found" />
-    <meta property="og:url" content="https://danielcmoura.com/404.html" />
-    <meta property="og:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta property="og:title" content="Daniel C. Moura | SPyQL" />
+    <meta property="og:url" content="https://danielcmoura.com/projects/1_project/" />
+    <meta property="og:description" content="SQL with Python in the Middle" />
     
     <meta property="og:locale" content="en" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Page not found" />
-    <meta name="twitter:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="twitter:title" content="SPyQL" />
+    <meta name="twitter:description" content="SQL with Python in the Middle" />
     
     <meta name="twitter:site" content="@daniel_c_moura" />
     <meta name="twitter:creator" content="@daniel_c_moura" />
@@ -49,7 +49,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐️</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://danielcmoura.com/404.html">
+    <link rel="canonical" href="https://danielcmoura.com/projects/1_project/">
     
     <!-- Dark Mode -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/friendly.css" media="none" id="highlight_theme_dark" />
@@ -106,12 +106,69 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Page not found</h1>
-            <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+            <h1 class="post-title">SPyQL</h1>
+            <p class="post-description">SQL with Python in the Middle</p>
           </header>
 
           <article>
-            <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://danielcmoura.com/">here</a>.</p>
+            <p><a href="https://github.com/dcmoura/spyql" target="_blank" rel="noopener noreferrer">SPyQL</a> is SQL with Python in the middle, an open-source project fully written in Python for making command-line data processing more intuitive, readable and powerful. Try mixing in the same pot:</p>
+
+<ul>
+  <li>a SQL SELECT for providing the structure;</li>
+  <li>Python expressions for defining transformations and conditions;</li>
+  <li>the essence of awk as a data-processing language;</li>
+  <li>the JSON handling capabilities of jq.</li>
+</ul>
+
+<h2 id="how-does-a-spyql-query-look-like">How does a SPyQL query look like?</h2>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">IMPORT</span> <span class="n">pendulum</span> <span class="k">AS</span> <span class="n">p</span>
+<span class="k">SELECT</span>
+    <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">p</span><span class="p">.</span><span class="n">from_timestamp</span><span class="p">(</span><span class="n">purchase_ts</span><span class="p">)).</span><span class="n">in_days</span><span class="p">()</span> <span class="k">AS</span> <span class="n">days_ago</span><span class="p">,</span>
+    <span class="n">sum_agg</span><span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="n">quantity</span><span class="p">)</span> <span class="k">AS</span> <span class="n">total</span>
+<span class="k">FROM</span> <span class="n">csv</span>
+<span class="k">WHERE</span> <span class="n">department</span><span class="p">.</span><span class="k">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'IT'</span> <span class="k">and</span> <span class="n">purchase_ts</span> <span class="k">is</span> <span class="k">not</span> <span class="k">Null</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="mi">1</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">1</span>
+<span class="k">TO</span> <span class="n">json</span></code></pre></figure>
+
+<p>Simple, readable, and, as with all SPyQL programs, it’s an 1-liner. In a single statement, we are:</p>
+<ol>
+  <li>reading a CSV (of purchases) with automatic header detection, dialect detection, type inference and casting,</li>
+  <li>filtering out records that do not belong to the IT department or do not have a purchase timestamp</li>
+  <li>summing the total purchases and grouping by how many days ago they happened,</li>
+  <li>sorting from the most to the least recent day and</li>
+  <li>writing the result in JSON format.</li>
+</ol>
+
+<p>All this without loading the dataset into memory.</p>
+
+<p>SPyQL will change data-processing in the terminal, making it accessible to anyone who knows a little-bit of Python and understands the basics of a SQL SELECT. On the other hand, it will give super-powers to experienced users. The possibilities are endless as you can import any Python library, and pipe data from/to any command-line tool. From querying APIs and Kafka, to write to files or databases, SPyQL will be the tool of choice for processing data in the command-line!</p>
+
+<h2 id="testimonials">Testimonials</h2>
+
+<blockquote>
+I'm very impressed - this is some very neat pragmatic software design.
+— Simon Willison, Creator of Datasette, co-creator of Django
+</blockquote>
+
+<blockquote>
+I love this tool! I use it every day...
+— Alin Panaitiu, Creator of Lunar
+</blockquote>
+
+<blockquote>
+Brilliant tool, thanks a lot for creating it and for the example here!
+— Greg Sadetsky, Co-founder and CTO at Decibel Ads
+</blockquote>
+
+<h2 id="pointers">Pointers</h2>
+
+<ul>
+  <li><a href="https://github.com/dcmoura/spyql" target="_blank" rel="noopener noreferrer">Repo @ GitHub</a></li>
+  <li><a href="https://vimeo.com/danielcmoura/spyqldemo" target="_blank" rel="noopener noreferrer">Demo video</a></li>
+  <li><a href="https://fosdem.org/2022/schedule/event/python_spyql/attachments/slides/5054/export/events/attachments/python_spyql/slides/5054/spyql_fosdem22_slides.pdf" target="_blank" rel="noopener noreferrer">Slides from FOSDEM22</a></li>
+</ul>
 
           </article>
 

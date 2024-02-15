@@ -2,31 +2,31 @@
 <html lang="en">
 
   <!-- Head -->
-  <head><meta http-equiv="refresh" content="3; url=https://danielcmoura.com/" />    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daniel C. Moura | Page not found</title>
+    <title>Daniel C. Moura | animating flows</title>
     <meta name="author" content="Daniel C. Moura" />
-    <meta name="description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="description" content="time-lapse visualization of mobility patterns" />
     <meta name="keywords" content="data-science, data, spyql, data-visualization, AI, machine learning" />
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="Daniel C. Moura" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Daniel C. Moura | Page not found" />
-    <meta property="og:url" content="https://danielcmoura.com/404.html" />
-    <meta property="og:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta property="og:title" content="Daniel C. Moura | animating flows" />
+    <meta property="og:url" content="https://danielcmoura.com/projects/5_project/" />
+    <meta property="og:description" content="time-lapse visualization of mobility patterns" />
     
     <meta property="og:locale" content="en" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Page not found" />
-    <meta name="twitter:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="twitter:title" content="animating flows" />
+    <meta name="twitter:description" content="time-lapse visualization of mobility patterns" />
     
     <meta name="twitter:site" content="@daniel_c_moura" />
     <meta name="twitter:creator" content="@daniel_c_moura" />
@@ -49,7 +49,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐️</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://danielcmoura.com/404.html">
+    <link rel="canonical" href="https://danielcmoura.com/projects/5_project/">
     
     <!-- Dark Mode -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/friendly.css" media="none" id="highlight_theme_dark" />
@@ -106,12 +106,38 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Page not found</h1>
-            <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+            <h1 class="post-title">animating flows</h1>
+            <p class="post-description">time-lapse visualization of mobility patterns</p>
           </header>
 
           <article>
-            <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://danielcmoura.com/">here</a>.</p>
+            <p>Porto buses are equipped with a Mobile Wi-Fi service from <a href="http://www.veniam.com" target="_blank" rel="noopener noreferrer">Veniam</a>, which provides free Wi-Fi to bus passengers. The system stores the start and end locations and times of Wi-Fi sessions, allowing to infer mobility patterns from Wi-Fi usage. The video below shows these mobility patterns. Locations were clustered with K-means, highly decreasing the complexity of the mobility graph and allowing to understand the major flows in the city.</p>
+
+<div style="padding:51.76% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/124638700?h=0441f0b86c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Origins and destinations of Porto&amp;rsquo;s bus passengers based on Wi-Fi"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<div class="caption"></div>
+
+<p>Clustering locations enables to understand the major patterns, but detail is lost in the way. Another approach for visualizing mobility flows is illustrated in the video below. Here, instead of clustering locations, the origin-destination pairs are bundled. Edges connecting the start and end location of a Wi-Fi session are deformed and grouped in order to identify major flows. These edges do not represent the paths (they are not mapped to roads) but flows in the city. In this version, flows that have different direction avoid each other while flows that have similar direction are attracted together. A blue to red gradient is used to illustrate flow, with flows starting blue at the origin and red at the destination.</p>
+
+<div style="padding:51.88% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/124650835?h=d1f988fd75&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Animated edge bundling for visualising the flow of bus passengers in Porto"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<div class="caption"></div>
+
+<p>Different criteria can be explored to bundle edges together. Some examples are illustrated in the video below here flows and their coloring are based on the trip’s distance or on the destination of the trip, for example.</p>
+
+<div style="padding:40.7% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/125892304?h=c701324d0e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="3DHEB in action: visualising the same data using different bundling criteria"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<div class="caption"></div>
+
+<p>Finally, and mainly for fun, we can do the animation in 3D and play with the height of the flows. In the next video, the direction of the flows is ignored, and height is calculated from the density of flows, creating interesting visual effects.</p>
+
+<div style="padding:51.88% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/129894173?h=a8840a587e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Under the Skin (of Porto&amp;#039;s bus network)"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<div class="caption"></div>
 
           </article>
 

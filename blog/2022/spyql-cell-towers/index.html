@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daniel C. Moura | Command-line data analytics made easy</title>
+    <meta name="author" content="Daniel C. Moura" />
+    <meta name="description" content="With SQL Powered by Python" />
+    <meta name="keywords" content="data-science, data, spyql, data-visualization, AI, machine learning" />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Daniel C. Moura" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Daniel C. Moura | Command-line data analytics made easy" />
+    <meta property="og:url" content="https://danielcmoura.com/blog/2022/spyql-cell-towers/" />
+    <meta property="og:description" content="With SQL Powered by Python" />
+    <meta property="og:image" content="/assets/img/kepler_h3_cell_towers.png" />
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Command-line data analytics made easy" />
+    <meta name="twitter:description" content="With SQL Powered by Python" />
+    <meta name="twitter:image" content="/assets/img/kepler_h3_cell_towers.png" />
+    <meta name="twitter:site" content="@daniel_c_moura" />
+    <meta name="twitter:creator" content="@daniel_c_moura" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/friendly.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐️</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://danielcmoura.com/blog/2022/spyql-cell-towers/">
+    
+    <!-- Dark Mode -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/friendly.css" media="none" id="highlight_theme_dark" />
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="https://danielcmoura.com/"><span class="font-weight-bold">Daniel</span> C.  Moura</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">about</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">stdout</a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Command-line data analytics made easy</h1>
+    <p class="post-meta">November 1, 2022</p>
+    <p class="post-tags">
+      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+        ·  
+        <a href="/blog/category/data-processing">
+          <i class="fas fa-tag fa-sm"></i> data-processing</a>  
+          <a href="/blog/category/command-line">
+          <i class="fas fa-tag fa-sm"></i> command-line</a>  
+          <a href="/blog/category/python">
+          <i class="fas fa-tag fa-sm"></i> python</a>  
+          <a href="/blog/category/csv">
+          <i class="fas fa-tag fa-sm"></i> csv</a>  
+          <a href="/blog/category/json">
+          <i class="fas fa-tag fa-sm"></i> json</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <p>The command-line is incredibly powerful when it comes to data processing. Still, many of us working with data do not take advantage of it. I can think of some reasons:</p>
+
+<ul>
+  <li>
+<strong>Poor readability</strong>: the focus is on minimising how much you need to type and not so much on how readable a sequence of commands is;</li>
+  <li>
+<strong>Steep learning curve</strong>: many commands, with many options;</li>
+  <li>
+<strong>Looks outdated:</strong> some of these tools are around since the 70s and target delimited text files (and not modern formats like JSON and YAML).</li>
+</ul>
+
+<p>These motivated me to write a command-line tool that focus on readability, easiness to learn and modern data formats, while leveraging the command-line ecosystem. On top of that, it also leverages the Python ecosystem! Meet <a href="https://github.com/dcmoura/spyql" target="_blank" rel="noopener noreferrer">SPyQL - SQL with Python in the middle</a>:</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
+  <span class="nb">date</span><span class="p">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">purchase_ts</span><span class="p">)</span> <span class="k">AS</span> <span class="n">purchase_date</span><span class="p">,</span>
+  <span class="n">sum_agg</span><span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="n">quantity</span><span class="p">)</span> <span class="k">AS</span> <span class="n">total</span>
+<span class="k">FROM</span> <span class="n">csv</span><span class="p">(</span><span class="s1">'my_purchases.csv'</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">department</span><span class="p">.</span><span class="k">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'IT'</span> <span class="k">and</span> <span class="n">purchase_ts</span> <span class="k">is</span> <span class="k">not</span> <span class="k">Null</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="mi">1</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">1</span>
+<span class="k">TO</span> <span class="n">json</span></code></pre></figure>
+
+<h1 id="spyql-in-action">SPyQL in Action</h1>
+
+<p>I think the best way for getting to know SPyQL and getting comfortable with the command-line is to open a terminal and solve a problem. In this case, we will try to understand the geographical distribution of cell towers. Let’s start!</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Let’s start by installing SPyQL:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip3 <span class="nb">install</span> <span class="nt">-U</span> spyql
+</code></pre></div></div>
+
+<p>and check its version:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="nt">--version</span>
+spyql, version 0.8.1
+</code></pre></div></div>
+
+<p>Let’s also install <a href="https://github.com/dcmoura/matplotcli" target="_blank" rel="noopener noreferrer">MatplotCLI</a>, a utility for creating plots from the command-line that leverages <a href="https://matplotlib.org" target="_blank" rel="noopener noreferrer">Matplotlib</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip3 <span class="nb">install</span> <span class="nt">-U</span> matplotcli
+</code></pre></div></div>
+
+<p>Finally, we will download some sample data (you can alternatively copy-paste the URL to your browser and download the file from there):</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget https://raw.githubusercontent.com/dcmoura/blogposts/master/spyql_cell_towers/sample.csv
+</code></pre></div></div>
+
+<p>This CSV file contains data about cell towers that were added to the <a href="https://www.opencellid.org/" target="_blank" rel="noopener noreferrer">OpenCellid</a> database on 2022 September 10 (<code class="language-plaintext highlighter-rouge">OCID-diff-cell-export-2022-09-10-T000000.csv</code> file from the <a href="https://www.opencellid.org/" target="_blank" rel="noopener noreferrer">OpenCellid</a> project redistributed without modifications under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>).</p>
+
+<h2 id="inspecting-thedata">Inspecting the data</h2>
+
+<p>Let’s look to the data by getting the first 3 lines of the file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">head</span> <span class="nt">-3</span> sample.csv
+radio,mcc,net,area,cell,unit,lon,lat,range,samples,changeable,created,updated,averageSignal
+GSM,262,2,852,2521,0,10.948628,50.170324,15762,200,1,1294561074,1662692508,0
+GSM,262,2,852,2501,0,10.940241,50.174076,10591,200,1,1294561074,1662692508,0
+</code></pre></div></div>
+
+<p>You could do this same operation with SPyQL:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT * FROM csv LIMIT 2"</span> &lt; sample.csv
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT * FROM csv('sample.csv') LIMIT 2"</span>
+</code></pre></div></div>
+
+<p>Notice that we are telling to get 2 rows of data and not 3 rows of the file (where the first is the header).</p>
+
+<p>One advantage of SPyQL is that we can change the output format easily. Let’s change the output to JSON and look to the first record:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT * FROM csv('sample.csv') LIMIT 1 TO json(indent=2)"</span>
+<span class="o">{</span>
+  <span class="s2">"radio"</span>: <span class="s2">"GSM"</span>,
+  <span class="s2">"mcc"</span>: 262,
+  <span class="s2">"net"</span>: 2,
+  <span class="s2">"area"</span>: 852,
+  <span class="s2">"cell"</span>: 2521,
+  <span class="s2">"unit"</span>: 0,
+  <span class="s2">"lon"</span>: 10.948628,
+  <span class="s2">"lat"</span>: 50.170324,
+  <span class="s2">"range"</span>: 15762,
+  <span class="s2">"samples"</span>: 200,
+  <span class="s2">"changeable"</span>: 1,
+  <span class="s2">"created"</span>: 1294561074,
+  <span class="s2">"updated"</span>: 1662692508,
+  <span class="s2">"averageSignal"</span>: 0
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="querying-thedata">Querying the data</h2>
+
+<p>Let’s first count how many records we have:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT count_agg(*) AS n FROM csv('sample.csv')"</span>
+n
+45745
+</code></pre></div></div>
+
+<p>Notice that aggregation functions have the suffix <code class="language-plaintext highlighter-rouge">_agg</code> to avoid conflicts with Python’s functions like <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code> and <code class="language-plaintext highlighter-rouge">sum</code>.
+Now, let’s count how many cell towers we have by radio type:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT radio, count_agg(*) AS n FROM csv('sample.csv') GROUP BY 1 
+ORDER BY 2 DESC TO pretty"</span>
+radio        n
+<span class="nt">-------</span>  <span class="nt">-----</span>
+GSM      31549
+LTE      12996
+UMTS      1182
+CDMA        16
+NR           2
+</code></pre></div></div>
+
+<p>Notice the pretty printing output. We can plot the above results by setting the output format to JSON and piping results into <a href="https://github.com/dcmoura/matplotcli" target="_blank" rel="noopener noreferrer">MatplotCLI</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT radio, count_agg(*) AS n FROM csv('sample.csv') GROUP BY 1 
+ORDER BY 2 DESC TO json"</span> | plt <span class="s2">"bar(radio, n)"</span>
+</code></pre></div></div>
+
+<div class="row">
+	<div class="col-2 mt-3 mt-md-0"></div>
+	<div class="col-8 mt-3 mt-md-0">
+		<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/matplotcli_count_by_type-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/matplotcli_count_by_type-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/matplotcli_count_by_type-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/matplotcli_count_by_type.png" title="Plot with MatplotCLI">
+
+  </picture>
+
+</figure>
+ 
+	</div>
+	<div class="col-2 mt-3 mt-md-0"></div>
+</div>
+<div class="caption">
+Matplolib plot created by MatplotCLI using the output of a SPyQL query
+</div>
+
+<p>How easy was that? <strong>:-)</strong></p>
+
+<h2 id="querying-the-data-a-more-complexexample">Querying the data: a more complex example</h2>
+
+<p>Now, let’s get the top 5 countries with more cell towers added on that day:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT mcc, count_agg(*) AS n FROM csv('sample.csv') GROUP BY 1 ORDER BY 2 DESC LIMIT 5 TO pretty"</span>
+  mcc      n
+<span class="nt">-----</span>  <span class="nt">-----</span>
+  262  24979
+  440   5085
+  208   4573
+  310   2084
+  311    799
+</code></pre></div></div>
+
+<p>MCC stands for Mobile Country Code (262 is the code for Germany). The first digit of the MCC identifies the region. Here’s an exert from <a href="https://en.wikipedia.org/wiki/Mobile_country_code" target="_blank" rel="noopener noreferrer">Wikipedia</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0: Test networks
+2: Europe
+3: North America and the Caribbean
+4: Asia and the Middle East
+5: Australia and Oceania
+6: Africa
+7: South and Central America
+9: Worldwide
+</code></pre></div></div>
+
+<p>Let’s copy paste the above list of regions and create a new file named <code class="language-plaintext highlighter-rouge">mcc_geo.txt</code>. On the mac this is as easy as <code class="language-plaintext highlighter-rouge">$ pbpaste &gt; mcc_geo.txt</code>, but you can also paste this into a text editor and save it.</p>
+
+<p>Now, let’s ask SPyQL to open this file as a CSV and print its contents:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT * FROM csv('mcc_geo.txt') TO pretty"</span>
+  col1  col2
+<span class="nt">------</span>  <span class="nt">-------------------------------</span>
+     0  Test networks
+     2  Europe
+     3  North America and the Caribbean
+     4  Asia and the Middle East
+     5  Australia and Oceania
+     6  Africa
+     7  South and Central America
+     9  Worldwide
+</code></pre></div></div>
+
+<p>SPyQL detected that the separator is a colon and that the file has no header. We will use the <em>colN</em> syntax to address the <em>Nth</em> column.</p>
+
+<p>Now, let’s create a single JSON object with as many key-value pairs as input rows. Let the 1st column of the input be the <em>key</em> and the 2nd column be the <em>value</em>, and save the result to a new file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"SELECT dict_agg(col1,col2) AS json FROM csv('mcc_geo.txt') TO json('mcc_geo.json', indent=2)"</span>
+</code></pre></div></div>
+
+<p>We can use <code class="language-plaintext highlighter-rouge">cat</code> to inspect the output file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>mcc_geo.json                                               
+<span class="o">{</span>
+  <span class="s2">"0"</span>: <span class="s2">"Test networks"</span>,
+  <span class="s2">"2"</span>: <span class="s2">"Europe"</span>,
+  <span class="s2">"3"</span>: <span class="s2">"North America and the Caribbean"</span>,
+  <span class="s2">"4"</span>: <span class="s2">"Asia and the Middle East"</span>,
+  <span class="s2">"5"</span>: <span class="s2">"Australia and Oceania"</span>,
+  <span class="s2">"6"</span>: <span class="s2">"Africa"</span>,
+  <span class="s2">"7"</span>: <span class="s2">"South and Central America"</span>,
+  <span class="s2">"9"</span>: <span class="s2">"Worldwide "</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Basically, we have aggregated all input lines into a Python dictionary, and then saved it as a JSON file. Try removing the <code class="language-plaintext highlighter-rouge">AS json</code> alias from the <code class="language-plaintext highlighter-rouge">SELECT</code> to understand why we need it :-) </p>
+
+<p>Now, let’s get the statistics by region instead of by MCC. For this, we will load the JSON file that we just created (with the <code class="language-plaintext highlighter-rouge">-J</code> option) and do a dictionary lookup:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="nt">-Jgeo</span><span class="o">=</span>mcc_geo.json <span class="s2">"SELECT geo[mcc//100] AS region, count_agg(*) AS n 
+FROM csv('sample.csv') GROUP BY 1 ORDER BY 2 DESC TO pretty"</span>
+region                               n
+<span class="nt">-------------------------------</span>  <span class="nt">-----</span>
+Europe                           35601
+Asia and the Middle East          5621
+North America and the Caribbean   3247
+Australia and Oceania              894
+Africa                             381
+South and Central America            1
+</code></pre></div></div>
+
+<p>We do an integer division by 100 to get the 1st digit of the MCC and then we lookup this digit on the JSON we just created (which is loaded as a Python dictionary). This how we do a JOIN in SPyQL, via a dictionary lookup :-)</p>
+
+<h2 id="leveraging-python-libs-on-yourqueries">Leveraging Python libs on your queries</h2>
+
+<p>Another advantage of SPyQL is that we can leverage the Python ecosystem. Let’s try to do some more geographical statistics. Let’s count towers by H3 cell (resolution 5) for Europe. First, we need to install the <a href="https://github.com/uber/h3-py" target="_blank" rel="noopener noreferrer">H3 lib</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip3 <span class="nb">install</span> <span class="nt">-U</span> h3
+</code></pre></div></div>
+
+<p>Then, we can convert latitude-longitude pairs into H3 cells, count how many towers we have by H3 cell, and save results into a CSV:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>spyql <span class="s2">"IMPORT h3 SELECT h3.geo_to_h3(lat, lon, 5) AS cell, count_agg(*) AS n 
+FROM csv('sample.csv') WHERE mcc//100==2 GROUP BY 1 TO csv('towers_by_h3_res5.csv')"</span>
+</code></pre></div></div>
+
+<p>Visualising these results is fairly simple with Kepler. Just go to <a href="https://kepler.gl/demo" target="_blank" rel="noopener noreferrer">kepler.gl/demo</a> and open the above file. You should see something like this:</p>
+
+<div class="row">
+	<div class="col-sm mt-3 mt-md-0">
+		<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/kepler_h3_cell_towers-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/kepler_h3_cell_towers-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/kepler_h3_cell_towers-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid  rounded z-depth-1" src="/assets/img/kepler_h3_cell_towers.png" title="Kepler visualization of aggregations by H3 cell (resolution 5) from SPyQL">
+
+  </picture>
+
+</figure>
+
+	</div>
+</div>
+<div class="caption">
+Kepler visualization of aggregations by H3 cell (resolution 5) from SPyQL
+</div>
+
+<h1 id="final-words">Final words</h1>
+
+<p>I hope you enjoyed SPyQL and that I could show you how simple it makes to query data from the command-line. In this first post about SPyQL, we are just scratching the surface. There is a lot more we can do. We have barely leveraged the Shell and Python ecosystems in this article. And we worked with a small file (SPyQL can handle GB-size files without compromising system resources). So, stay tuned!</p>
+
+<p>Try out SPyQL and reach back to me with your thoughts. Thank you!</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li>
+    <p>SPyQL repo: <a href="https://github.com/dcmoura/spyql" target="_blank" rel="noopener noreferrer">github.com/dcmoura/spyql</a></p>
+  </li>
+  <li>
+    <p>SPyQL documentation: <a href="https://spyql.readthedocs.io" target="_blank" rel="noopener noreferrer">spyql.readthedocs.io</a></p>
+  </li>
+  <li>
+    <p>MatplotCLI repo: <a href="https://github.com/dcmoura/matplotcli" target="_blank" rel="noopener noreferrer">github.com/dcmoura/matplotcli</a></p>
+  </li>
+</ul>
+
+<hr>
+
+<p>SPyQL is open-source (<a href="https://github.com/dcmoura/spyql/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT license</a>).
+If you like the project, please consider giving it a <a href="https://github.com/dcmoura/spyql" target="_blank" rel="noopener noreferrer">star</a>. I celebrate every star and every fork the project gets :-). All kind of contributions are welcomed, just reach out to me before you start coding. Thank you!</p>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2024 Daniel C. Moura. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQHJE5T93M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GQHJE5T93M');
+  </script>
+  </body>
+</html>
+

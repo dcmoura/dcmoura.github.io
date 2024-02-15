@@ -2,31 +2,31 @@
 <html lang="en">
 
   <!-- Head -->
-  <head><meta http-equiv="refresh" content="3; url=https://danielcmoura.com/" />    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daniel C. Moura | Page not found</title>
+    <title>Daniel C. Moura | graph bundling</title>
     <meta name="author" content="Daniel C. Moura" />
-    <meta name="description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="description" content="revealing connectivity patterns in large graphs" />
     <meta name="keywords" content="data-science, data, spyql, data-visualization, AI, machine learning" />
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="Daniel C. Moura" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Daniel C. Moura | Page not found" />
-    <meta property="og:url" content="https://danielcmoura.com/404.html" />
-    <meta property="og:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta property="og:title" content="Daniel C. Moura | graph bundling" />
+    <meta property="og:url" content="https://danielcmoura.com/projects/4_project/" />
+    <meta property="og:description" content="revealing connectivity patterns in large graphs" />
     
     <meta property="og:locale" content="en" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Page not found" />
-    <meta name="twitter:description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="twitter:title" content="graph bundling" />
+    <meta name="twitter:description" content="revealing connectivity patterns in large graphs" />
     
     <meta name="twitter:site" content="@daniel_c_moura" />
     <meta name="twitter:creator" content="@daniel_c_moura" />
@@ -49,7 +49,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐️</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://danielcmoura.com/404.html">
+    <link rel="canonical" href="https://danielcmoura.com/projects/4_project/">
     
     <!-- Dark Mode -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/friendly.css" media="none" id="highlight_theme_dark" />
@@ -106,12 +106,135 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Page not found</h1>
-            <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+            <h1 class="post-title">graph bundling</h1>
+            <p class="post-description">revealing connectivity patterns in large graphs</p>
           </header>
 
           <article>
-            <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://danielcmoura.com/">here</a>.</p>
+            <p>3DHEB is an algorithm that bundles edges of a graph to reveal connectivity patterns. It allows to tackle large graphs and specify bundling criteria to cluster edges (in addition to the default criteria based on  proximity).</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/airlines_1bin-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/airlines_1bin-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/airlines_1bin-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/airlines_1bin.png" title="US airlines bundling">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Bundling origin-destination links of air trips in the US (datasource: <a href="https://github.com/gephi/gephi/wiki/Datasets" target="_blank" rel="noopener noreferrer">US airlines dataset</a>)
+</div>
+
+<p>In the above image, the nodes of the graph are airports and the edges (aka arcs or links) of the graph are trips between airports, with weight equal to the number of trips between the origin-destination airports. Edges are bundled iteratively based on their spatial density, revealing connectivity patterns.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/airlines_flow-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/airlines_flow-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/airlines_flow-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/airlines_flow.png" title="US airlines bundling - flow">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Bundling origin-destination links of air trips in the US, using flow direction as bundling criteria.
+</div>
+
+<p>By adding bundling criteria the algorithm can reveal more patterns. In the above case, the direction of the flow is taken into account to produce different density maps that interact among them. Flows that have opposite directions are repealed while flows that have similar direction are attracted. Gradient colouring allow for a better understanding of the direction of the flows, with edges being blue at the origin and red at the destination, passing through black.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/pattern1_1bin-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/pattern1_1bin-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/pattern1_1bin-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/pattern1_1bin.png" title="Bundling a graph with 5M edges">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Bundling large graphs (<a href="https://sparse.tamu.edu/Andrianov/pattern1" target="_blank" rel="noopener noreferrer">Andrianov/pattern1</a> from the University of Florida Sparse Matrix Collection, 5 million edges).
+</div>
+
+<p>The algorithm can tackle large graphs like the one above with 5 million edges. Bellow, edges are clustered into 8 clusters taking into account their origin and destination, with each cluster being represented by different color.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/pattern1_8bins-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/pattern1_8bins-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/pattern1_8bins-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/pattern1_8bins.png" title="Bundling a graph with 5M edges">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Bundling a large graph using origin-destination clusters as criteria (each cluster has a different color).
+</div>
+
+<p>I have created an <a href="http://dcmoura.github.io/3DHEB/" target="_blank" rel="noopener noreferrer">online tool</a> where you can have a go and play with the different parameters of the algorithm. The code is available at <a href="https://github.com/dcmoura/3DHEB" target="_blank" rel="noopener noreferrer">github</a> and more details can be found in the paper <a href="https://arxiv.org/abs/1504.02687" target="_blank" rel="noopener noreferrer">3D Density Histograms for Criteria-driven Edge Bundling</a>.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/3dheb_app_pic-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/3dheb_app_pic-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/3dheb_app_pic-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/3dheb_app_pic.png" title="Online app for bundling graphs">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    <a href="http://dcmoura.github.io/3DHEB/" target="_blank" rel="noopener noreferrer">Online tool</a> for bundling your graphs.
+</div>
 
           </article>
 
